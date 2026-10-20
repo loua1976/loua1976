@@ -1,0 +1,17 @@
+{
+  "enabledMcpjsonServers": ["rea"],
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v rea >/dev/null 2>&1 || npm install --global rea-agents@6.7.0 >/dev/null 2>&1 || true",
+            "timeout": 180
+          }
+        ]
+      }
+    ]
+  }
+}
